@@ -6,6 +6,7 @@ namespace LanguageFeatures.Models
     {
         public String Name { get; set; }
         public Decimal? Price { get; set; }
+        public Product Related { get; set; }
         public static Product[] GetProducts()
         {
             Product kayak = new Product
@@ -18,6 +19,8 @@ namespace LanguageFeatures.Models
                 Name = "Lifejack",
                 Price = 48.95m
             };
+
+            kayak.Related = lifejacket;
             return new Product[] { kayak, lifejacket, null };
         }
     }
